@@ -2,20 +2,21 @@ import random
 
 def take_stick(n,Name):
     i=1
-    Game_over = 0
-    while n > 0 and Game_over == 0:                                         # n<0 and game_over != 0
+    while n > 0 :
         
         if i % 2 == 0:
-            #print("Z ",i%2)                                                #Chack AI or man playing
+            #print("Z ",i%2)
             name1 = "AI"
-            for _ in range(1):                                              #Loop random value of AI
+            for _ in range(1): ####
                 X = random.randint(1,2)
                 print(name1, "I,smart computer, take: ",X)
-                
+        #  print("There are",n-X,"Left in plie.")
+        
         else :
             name1 = Name
             print(name1,end=" ")
-            X = int(input(",how many sticks you want to take (1 or 2): "))
+            x = input(",how many sticks you want to take (1 or 2): ")
+            X = int(x)
             #print("i= ",i)
             #print("X= ",X)
             #print("n= ",n)
@@ -29,23 +30,21 @@ def take_stick(n,Name):
         if X>n or X==n :
             #print("There are not enough stick to take.")
             print(name1, ", Lose!")
-            Game_over = 1
-            
+            #break
         else:
             n = n - X
             print("There are",n,"Left in plie.\n")
             if n == 1:
                 print(name1, ", Win!")
-                Game_over = -1
-                
+                #break
             else :
                 i += 1
             
-    print("Game spent" , i ,"round.")    
+    print("Game spent" , i ,"times. ")
 
-n = int(input("How many sticks(N) in the pile: "))
-print("There are", n , "sticks in the pile." )
-
+N = input("How many sticks(N) in the pile: ")
+print("There are", N , "sticks in the pile." )
 Name = input("What is your name: ")
+n = int(N)
 Process = take_stick(n,Name)
-         
+#print(Process)
