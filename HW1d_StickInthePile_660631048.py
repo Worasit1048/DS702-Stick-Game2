@@ -1,5 +1,14 @@
 import random
 
+def in_put_value (n,mp,Name) :
+    n = int(input("How many sticks(N) in the pile: "))
+    print("There are", n , "sticks in the pile." )
+    mp = int(input("Maximum number of stick, we can take it off?: "))
+
+    Name = input("What is your name: ")
+    take_stick(n,Name,mp)
+
+
 def take_stick(n,Name,mp):
     i=1
     Game_over = 0
@@ -66,12 +75,16 @@ def take_stick(n,Name,mp):
                 else :
                     i += 1
             
-    print("Game spent" , i ,"round.")    
+    print("Game spent" , i ,"round.")
+    #Display()    
 
-n = int(input("How many sticks(N) in the pile: "))
-print("There are", n , "sticks in the pile." )
-mp = int(input("Maximum number of stick, we can take it off?: "))
+#def Display():
 
-Name = input("What is your name: ")
-Process = take_stick(n,Name,mp)
-         
+
+n = int()
+mp = int()
+Name = str()
+
+#######################
+
+Game_start = in_put_value(n,Name,mp)         
